@@ -1,16 +1,9 @@
-
-// Menggunakan module FiveM
 const { onNet, emitNet} = require('fivem-js');
-
-// Mendaftarkan perintah 'showvideo'
 onNet('showvideo', (url) => {
-    // Memeriksa apakah URL disediakan
     if (url && url!== "") {
-        // Mengirim pesan ke pemain
         emitNet('chat:addMessage', source, {
             color: [255, 0, 0],            multiline: true,
             args: ["Video URL","Tonton video di sini:" + url]        });} else {
-        // Jika tidak ada URL, berikan pesan kesalahan
         emitNet('chat:addMessage', source, {
             color: [255, 0, 0],            multiline: true,
             args: ["Kesalahan","Silakan masukkan URL video!"]        });}});```3. **Menambahkan ke`fxmanifest.lua`**:
